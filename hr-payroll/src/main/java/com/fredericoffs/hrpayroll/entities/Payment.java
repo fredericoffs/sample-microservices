@@ -48,8 +48,4 @@ public class Payment implements Serializable {
 		return days * dailyIncome;
 	}
 
-	public String getMessage() {
-		return "deu certim bb";
-	}
-
 }
