@@ -2,7 +2,9 @@ package com.fredericoffs.hrworker.resources;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,11 @@ import com.fredericoffs.hrworker.repositories.WorkerRepository;
 @RequestMapping(value = "/workers")
 public class WorkerResource {
 
+	private static Logger logger = org.slf4j.LoggerFactory.getLogger(WorkerResource.class);
+
+	@Autowired
+	private Environment env;
+
 	@Autowired
 	private WorkerRepository repository;
 
@@ -27,6 +34,10 @@ public class WorkerResource {
 
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findById(@PathVariable Long id) {
+
+		// imprimir o nro da porta que está rodando
+		logger.info("Port = " + env.getProperty("local.server.port"));
+
 		Worker obj = repository.findById(id).get();
 		return ResponseEntity.ok().body(obj);
 	}
