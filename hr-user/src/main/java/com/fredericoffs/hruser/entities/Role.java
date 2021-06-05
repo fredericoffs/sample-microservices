@@ -36,7 +36,7 @@ public class Role implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
+	public String getRoleName() {
 		return roleName;
 	}
 
