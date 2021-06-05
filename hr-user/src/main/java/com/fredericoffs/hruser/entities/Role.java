@@ -17,15 +17,15 @@ public class Role implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String roleName;
 
 	public Role() {
 	}
 
-	public Role(Long id, String name) {
+	public Role(Long id, String roleName) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.roleName = roleName;
 	}
 
 	public Long getId() {
@@ -37,11 +37,11 @@ public class Role implements Serializable {
 	}
 
 	public String getName() {
-		return name;
+		return roleName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String roleName) {
+		this.roleName = roleName;
 	}
 
 }
