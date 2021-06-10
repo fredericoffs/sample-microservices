@@ -39,7 +39,7 @@ ADD ./target/hr-eureka-server-0.0.1-SNAPSHOT.jar hr-eureka-server.jar
 ENTRYPOINT ["java","-jar","/hr-eureka-server.jar"]
 ```
 ```
-mvnw clean package
+./mvnw clean package
 
 docker build -t hr-eureka-server:v1 .
 
@@ -54,7 +54,7 @@ ADD ./target/hr-worker-0.0.1-SNAPSHOT.jar hr-worker.jar
 ENTRYPOINT ["java","-jar","/hr-worker.jar"]
 ```
 ```
-mvnw clean package -DskipTests
+./mvnw clean package -DskipTests
 
 docker build -t hr-worker:v1 .
 
