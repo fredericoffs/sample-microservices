@@ -69,7 +69,7 @@ ADD ./target/hr-user-0.0.1-SNAPSHOT.jar hr-user.jar
 ENTRYPOINT ["java","-jar","/hr-user.jar"]
 ```
 ```
-mvnw clean package -DskipTests
+./mvnw clean package -DskipTests
 
 docker build -t hr-user:v1 .
 
@@ -84,7 +84,7 @@ ADD ./target/hr-payroll-0.0.1-SNAPSHOT.jar hr-payroll.jar
 ENTRYPOINT ["java","-jar","/hr-payroll.jar"]
 ```
 ```
-mvnw clean package -DskipTests
+./mvnw clean package -DskipTests
 
 docker build -t hr-payroll:v1 .
 
