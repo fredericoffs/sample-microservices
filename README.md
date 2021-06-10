@@ -99,7 +99,7 @@ ADD ./target/hr-oauth-0.0.1-SNAPSHOT.jar hr-oauth.jar
 ENTRYPOINT ["java","-jar","/hr-oauth.jar"]
 ```
 ```
-mvnw clean package -DskipTests
+./mvnw clean package -DskipTests
 
 docker build -t hr-oauth:v1 .
 
@@ -115,7 +115,7 @@ ADD ./target/hr-api-gateway-zuul-0.0.1-SNAPSHOT.jar hr-api-gateway-zuul.jar
 ENTRYPOINT ["java","-jar","/hr-api-gateway-zuul.jar"]
 ```
 ```
-mvnw clean package -DskipTests
+./mvnw clean package -DskipTests
 
 docker build -t hr-api-gateway-zuul:v1 .
 
